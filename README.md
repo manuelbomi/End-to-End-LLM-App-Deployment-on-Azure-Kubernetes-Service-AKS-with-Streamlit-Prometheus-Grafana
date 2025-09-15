@@ -39,9 +39,12 @@ Each manifest is modular and can be applied in sequence.
 Prerequisites  🚀 
 
 1. Azure CLI installed
+   
      ◦ az login
 
 2. kubectl and Helm installed
+   
      ◦ kubectl version --client
+
      ◦ helm version
 
