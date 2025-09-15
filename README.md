@@ -36,7 +36,7 @@ Each manifest is modular and can be applied in sequence.
 
 ---
 
-Prerequisites  🚀 
+Prerequisites  
 
 1. Azure CLI installed
    
@@ -47,4 +47,18 @@ Prerequisites  🚀
      ◦ kubectl version --client
 
      ◦ helm version
+
+### Overview 📌 
+
+#### This repository contains a multifunctional Agentic AI workflow built in n8n. The system leverages OpenAI, Pinecone, and Google Calendar to provide enterprise-ready orchestration across two core functions:
+    1. Enterprise Data Orchestration
+    
+        ◦ Store and retrieve documents from enterprise repositories (e.g., Google Drive) using Pinecone vector storage.
+        
+        ◦ Generate OpenAI embeddings for semantic search, knowledge retrieval, and intelligent querying.
+        
+    2. Event Coordination
+        ◦ Automate scheduling by checking availability in Google Calendar.
+        
+        ◦ Create events in confirmed time slots, acting as a smart AI-powered calendar assistant.
 
