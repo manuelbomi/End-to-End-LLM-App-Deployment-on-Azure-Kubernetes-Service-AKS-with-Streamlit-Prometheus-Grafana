@@ -36,17 +36,6 @@ Each manifest is modular and can be applied in sequence.
 
 ---
 
-Prerequisites  
-
-1. Azure CLI installed
-   
-     ◦ az login
-
-2. kubectl and Helm installed
-   
-     ◦ kubectl version --client
-
-     ◦ helm version
 
 ### Prerequisites  
 
@@ -58,4 +47,7 @@ Prerequisites
         ◦ kubectl version --client
         
         ◦ helm version
+
+   3. An AKS Cluster
+      * An AKS Cluster
 
