@@ -8,7 +8,7 @@
 
 ---
 
-## Features  🌟
+## Features  
 
 * LLM Streamlit App (pulled from Docker Hub: emmanueloyekanlu/llm_enterprise:latest)
 
@@ -26,7 +26,7 @@
 
 --- 
 
-## Repository Structure  📂
+## Repository Structure  
 
 Only Kubernetes manifests are included in this repository:
 
@@ -48,17 +48,14 @@ Prerequisites
 
      ◦ helm version
 
-### Overview 📌 
+### Prerequisites  
 
-#### This repository contains a multifunctional Agentic AI workflow built in n8n. The system leverages OpenAI, Pinecone, and Google Calendar to provide enterprise-ready orchestration across two core functions:
-    1. Enterprise Data Orchestration
+    1. Azure CLI installed
     
-        ◦ Store and retrieve documents from enterprise repositories (e.g., Google Drive) using Pinecone vector storage.
+        ◦ az login      
         
-        ◦ Generate OpenAI embeddings for semantic search, knowledge retrieval, and intelligent querying.
+    2. kubectl and Helm installed
+        ◦ kubectl version --client
         
-    2. Event Coordination
-        ◦ Automate scheduling by checking availability in Google Calendar.
-        
-        ◦ Create events in confirmed time slots, acting as a smart AI-powered calendar assistant.
+        ◦ helm version
 
