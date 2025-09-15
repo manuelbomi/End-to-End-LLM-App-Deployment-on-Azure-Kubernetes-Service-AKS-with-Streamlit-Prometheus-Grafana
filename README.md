@@ -32,6 +32,16 @@ Only Kubernetes manifests are included in this repository:
 
 <img width="375" height="290" alt="Image" src="https://github.com/user-attachments/assets/a17bb7f6-70d5-4b48-9568-9d559da15524" />
 
+Each manifest is modular and can be applied in sequence.
+
 ---
 
-![Image](https://github.com/user-attachments/assets/de441190-a86f-470a-8747-03aedd09f136)
+Prerequisites  🚀 
+
+1. Azure CLI installed
+     ◦ az login
+
+2. kubectl and Helm installed
+     ◦ kubectl version --client
+     ◦ helm version
+
