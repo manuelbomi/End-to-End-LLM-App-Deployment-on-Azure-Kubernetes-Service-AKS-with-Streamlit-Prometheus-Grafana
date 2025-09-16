@@ -61,3 +61,9 @@ Each manifest is modular and can be applied in sequence.
 
       ◦ emmanueloyekanlu/llm_enterprise:latest
 
+---
+
+### Step-by-Step Deployment
+
+1. Install NGINX Ingress Controller
+
