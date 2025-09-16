@@ -49,7 +49,7 @@ Each manifest is modular and can be applied in sequence.
         ◦ helm version
 
     3. An AKS Cluster    
-      ◦ An AKS Cluster  (see how to create an AKS cluster here:    )
+      ◦ An AKS Cluster  (see how to create an AKS cluster here: https://github.com/manuelbomi/Azure-Kubernetes-Services-AKS-Enterprise-Cluster-Provisioning-/tree/main   )
       
       ◦ az aks get-credentials --resource-group <your-resource-group> --name <your-aks-cluster>
 
