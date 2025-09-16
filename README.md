@@ -67,3 +67,15 @@ Each manifest is modular and can be applied in sequence.
 
 1. Install NGINX Ingress Controller
 
+---
+```ruby
+kubectl create namespace ingress-nginx
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+helm install ingress-nginx ingress-nginx/ingress-nginx \
+--namespace ingress-nginx \
+--set controller.service.type=LoadBalancer
+
+```
+---
+
