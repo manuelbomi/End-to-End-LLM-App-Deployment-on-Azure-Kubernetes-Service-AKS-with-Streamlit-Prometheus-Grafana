@@ -63,9 +63,9 @@ Each manifest is modular and can be applied in sequence.
 
 ---
 
-### Step-by-Step Deployment
+### Step-by-Step Deployment (Option 1)
 
-1. Install NGINX Ingress Controller
+#### 1. Install NGINX Ingress Controller
 
 ---
 ```ruby
@@ -79,8 +79,44 @@ helm install ingress-nginx ingress-nginx/ingress-nginx \
 ```
 ---
 
-Check the external IP:
+#### Check the external IP:
+
 ```ruby
 kubectl get svc -n ingress-nginx
+```
+
+#### Update your Namecheap domain A records with this IP.
+
+#### 2. Install Cert-Manager
+---
+```ruby
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
+helm upgrade --install cert-manager jetstack/cert-manager \
+--namespace cert-manager \
+--create-namespace \
+--set crds.enabled=true
+```
+---
+
+#### 3. Apply Kubernetes Resources
+
+#### Apply all manifests in order:
+---
+```ruby
+kubectl apply -f 00-namespace.yaml
+kubectl apply -f 01-pvcs.yaml
+kubectl apply -f 02-secrets.yaml
+kubectl apply -f 03-configmap.yaml
+kubectl apply -f 04-deployments.yaml
+kubectl apply -f 05-services.yaml
+kubectl apply -f 06-ingress.yaml
+```
+---
+
+#### Start with staging certificates:
+
+```ruby
+kubectl apply -f clusterissuer-staging.yaml
 ```
 
