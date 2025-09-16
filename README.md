@@ -160,3 +160,16 @@ kubectl apply -f 06-ingress.yaml
 Or: Click the Cloud Shell icon from the Azure Portal
 Choose Bash, not PowerShell.
 
+#### 2. Upload Your Zip File
+
+* Use the "Upload" button to upload k8s-deployment-bundle.zip
+  
+It will be saved in your Cloud Shell's $HOME directory or mounted /home/<you>/clouddrive.
+
+#### 3. Unzip & Prepare
+* unzip k8s-deployment-bundle.zip
+  
+* cd k8s-deployment-bundle
+
+* chmod +x deploy.sh
+
