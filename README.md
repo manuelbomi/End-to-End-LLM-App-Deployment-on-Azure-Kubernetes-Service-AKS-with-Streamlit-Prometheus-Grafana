@@ -120,3 +120,37 @@ kubectl apply -f 06-ingress.yaml
 kubectl apply -f clusterissuer-staging.yaml
 ```
 
+---
+
+#### 4. Verify Certificates
+
+##### Check if certs were issued:
+---
+```ruby
+kubectl get certificates -n llm-system
+kubectl describe certificate streamlit-tls -n llm-system
+```
+---
+
+##### If Ready: True, you’re good.
+
+##### Switch to production:
+---
+```ruby
+kubectl apply -f clusterissuer-prod.yaml
+kubectl apply -f 06-ingress.yaml
+```
+---
+
+#### 5. Access Your Apps
+* Streamlit: https://app.emmanueloyekanluprojects.com
+
+* Prometheus: https://prometheus.emmanueloyekanluprojects.com
+
+* Grafana: https://grafana.emmanueloyekanluprojects.com
+
+---
+
+### Step-by-Step Deployment (Option 2)
+##### Alternatively, instead of using all the steps in option 1 above, you can choose to put all the .yaml manifests in a zip file, say *<ins>k8s-deployment-bundle.zip</ins>*
+
