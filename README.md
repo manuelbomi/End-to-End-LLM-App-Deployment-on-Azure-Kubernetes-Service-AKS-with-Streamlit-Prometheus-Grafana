@@ -154,3 +154,9 @@ kubectl apply -f 06-ingress.yaml
 ### Step-by-Step Deployment (Option 2)
 ##### Alternatively, instead of using all the steps in option 1 above, you can choose to put all the .yaml manifests in a zip file, say *<ins>k8s-deployment-bundle.zip</ins>*
 
+#### 1. Open Cloud Shell
+    • Go to: https://shell.azure.com/
+    
+Or: Click the Cloud Shell icon from the Azure Portal
+Choose Bash, not PowerShell.
+
