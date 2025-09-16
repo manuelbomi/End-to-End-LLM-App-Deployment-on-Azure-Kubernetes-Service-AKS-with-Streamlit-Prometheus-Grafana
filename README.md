@@ -37,7 +37,7 @@ Each manifest is modular and can be applied in sequence.
 ---
 
 
-### Prerequisites  
+## Prerequisites  
 
     1. Azure CLI installed
     
@@ -78,4 +78,9 @@ helm install ingress-nginx ingress-nginx/ingress-nginx \
 
 ```
 ---
+
+Check the external IP:
+```ruby
+kubectl get svc -n ingress-nginx
+```
 
