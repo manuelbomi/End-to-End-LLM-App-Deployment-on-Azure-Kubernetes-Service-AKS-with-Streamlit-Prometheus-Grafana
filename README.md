@@ -194,3 +194,98 @@ It will be saved in your Cloud Shell's $HOME directory or mounted /home/<you>/cl
     • Apply the staging issuer
     • Deploy all components (Streamlit, Prometheus, Grafana, Ingress, Secrets, PVCs)
 
+---
+## Troubleshooting
+#### 1. DNS Issues
+
+* Ensure your domain points to the AKS ingress IP:
+---
+```ruby
+
+kubectl get svc ingress-nginx-controller -n ingress-nginx -o wide
+nslookup app.emmanueloyekanluprojects.com
+```
+---
+
+#### 2. Certificates Not Issued
+
+* Check CertificateRequests:
+---
+```ruby
+
+kubectl get certificaterequests -n llm-system
+kubectl describe certificaterequest <name>
+```
+---
+
+* Ensure port 80 is open in your Azure NSG:
+
+---
+```ruby
+
+az network nsg rule create \
+--resource-group <your-resource-group> \
+--nsg-name <your-nsg-name> \
+--name Allow-HTTP \
+--priority 100 \
+--direction Inbound \
+--access Allow \
+--protocol Tcp \
+--destination-port-ranges 80 \
+--description "Allow HTTP for ACME challenge"
+```
+---
+
+#### 3. Debugging Pods
+---
+```ruby
+kubectl get pods -n llm-system
+kubectl logs <pod-name> -n llm-system
+```
+---
+
+#### 4. Test HTTP Challenge
+---
+```ruby
+curl -v http://app.emmanueloyekanluprojects.com/.well-known/acme-challenge/test
+```
+---
+
+#### Monitoring Stack  📊 
+
+* Prometheus scrapes metrics from the Streamlit app on port 9001.
+
+* Grafana connects to Prometheus and provides dashboards for app monitoring.
+
+* Both Prometheus and Grafana use PersistentVolumeClaims (PVCs) for durable storage.
+
+---
+
+#### Scaling Up  🏗️ 
+
+* Increase replicas for high availability (replicas: 3 in deployments).
+
+* Add HPA (Horizontal Pod Autoscaler) for auto-scaling workloads.
+
+* Integrate Azure Monitor for extended observability.
+
+* Expand to multi-environment setup: dev, staging, prod.
+
+---
+
+#### Conclusion  ✅ 
+
+* This repository demonstrates how to deploy an LLM-powered Streamlit app with monitoring on Azure Kubernetes Service (AKS) using production-grade practices:
+
+* Docker Hub for images
+
+* Helm for package management
+
+* Cert-Manager for TLS automation
+
+* Ingress + Namecheap DNS for routing
+
+* Azure CLI for cluster operations
+
+* With these manifests, anyone can reproduce this enterprise-ready deployment from scratch.
+
