@@ -48,15 +48,16 @@ Each manifest is modular and can be applied in sequence.
         
         ◦ helm version
 
-   3. An AKS Cluster
+    3. An AKS Cluster    
       ◦ An AKS Cluster  (see how to create an AKS cluster here:    )
+      
       ◦ az aks get-credentials --resource-group <your-resource-group> --name <your-aks-cluster>
 
-4. Namecheap Domain pointing to your AKS ingress public IP (example: app.emmanueloyekanluprojects.com)
+    4. Namecheap Domain pointing to your AKS ingress public IP (example: app.emmanueloyekanluprojects.com)
 
-  ◦ Update A records in Namecheap to match the AKS LoadBalancer IP
+      ◦ Update A records in Namecheap to match the AKS LoadBalancer IP
 
-Docker Image available on Docker Hub:
+    5. Docker Image available on Docker Hub:
 
-  ◦ emmanueloyekanlu/llm_enterprise:latest
+      ◦ emmanueloyekanlu/llm_enterprise:latest
 
