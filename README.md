@@ -171,5 +171,26 @@ It will be saved in your Cloud Shell's $HOME directory or mounted /home/<you>/cl
   
 * cd k8s-deployment-bundle
 
-* chmod +x deploy.sh
+* create a deploy.sh file (nano deploy.sh)
+* Copy the content of the deploy.sh in the repository and paste it into your deploy.sh file (ctrl + shift + v)
+* Save it (ctrl + x)
+* Give it permission (chmod +x deploy.sh)
+
+##### 4. Connect to Your AKS Cluster
+
+* az login
+  
+* az aks get-credentials --resource-group <your-resource-group> --name <your-aks-cluster-name>
+
+* az aks get-credentials --resource-group llm_enterprise-rg --name llm-enterprise-2
+
+
+##### 5. Run Your Deployment Script
+
+* ./deploy.sh
+
+##### The ./deploy.sh step will use the ./deploy.sh script to:
+    • Install cert-manager
+    • Apply the staging issuer
+    • Deploy all components (Streamlit, Prometheus, Grafana, Ingress, Secrets, PVCs)
 
