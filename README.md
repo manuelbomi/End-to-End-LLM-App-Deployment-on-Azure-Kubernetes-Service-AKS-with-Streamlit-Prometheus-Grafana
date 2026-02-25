@@ -132,7 +132,7 @@ kubectl describe certificate streamlit-tls -n llm-system
 ```
 ---
 
-##### If Ready: True, you’re good.
+##### If Ready: True, then you are good to go.
 
 ##### Switch to production:
 ---
@@ -251,7 +251,7 @@ curl -v http://app.emmanueloyekanluprojects.com/.well-known/acme-challenge/test
 ```
 ---
 
-#### Monitoring Stack  📊 
+#### Monitoring Stack  
 
 * Prometheus scrapes metrics from the Streamlit app on port 9001.
 
@@ -261,7 +261,7 @@ curl -v http://app.emmanueloyekanluprojects.com/.well-known/acme-challenge/test
 
 ---
 
-#### Scaling Up  🏗️ 
+#### Scaling Up  
 
 * Increase replicas for high availability (replicas: 3 in deployments).
 
@@ -291,11 +291,14 @@ curl -v http://app.emmanueloyekanluprojects.com/.well-known/acme-challenge/test
 
 ---
 
-Thank you for reading
+#### Thank you for reading
 
 ---
 
+#### Consider pinning a star if you find the repo useful.
+
 ### **AUTHOR'S BACKGROUND**
+
 ### Author's Name:  Emmanuel Oyekanlu
 ```
 Skillset:   I have experience spanning several years in data science, developing scalable enterprise data pipelines,
